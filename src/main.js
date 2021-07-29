@@ -3,8 +3,17 @@ import App from './App.vue'
 import './assets/tailwind.css'
 import router from './router'
 import { BootstrapVue, IconsPlugin } from 'bootstrap-vue'
+import VueAxios from 'vue-axios'
+import Axios from 'axios'
 
 Vue.config.productionTip = false
+Vue.use(BootstrapVue);
+Vue.use(IconsPlugin);
+Vue.use( VueAxios, Axios);
+
+//aqui importamos css de bootstrap 
+import 'bootstrap/dist/css/bootstrap.css'
+import 'bootstrap-vue/dist/bootstrap-vue.css'
 
 new Vue({
   router,
