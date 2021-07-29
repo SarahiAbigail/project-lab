@@ -1,10 +1,10 @@
 <template>
-  <div class="Peliculas">
+  <div class="Episodios">
     <h1>Aquí irán todas las Peliculas</h1>
   </div>
+
 </template>
+
 <script>
-export default {
-    
-}
+
 </script>
