@@ -1,8 +1,16 @@
 <template>
   <div class="Episodios" id="app">
+    <div class="hero is-white is-gradient is-bold">
+      <div class="hero-body">
+        <h1 class="title">
+          <span class="hs text success">Serie que vamosa mostrar</span>
+        </h1>
+            <button class="button" v-on:click="fetch">Consultar</button>
+      </div>
+
+    </div>
+    hero.is-white.is-gradient.is-bold
     <h1>Aquí irán todas las Peliculas</h1>
-    <button v-on:click="fetch">Consultar</button>
-    
     <div v-for="character of characters" v-bind:key="character.id">
     {{ character }}
   </div>
