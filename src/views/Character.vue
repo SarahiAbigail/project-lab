@@ -175,3 +175,10 @@ export default {
 };
 
 </script>
+
+<style scoped>
+h1{
+  text-align: center;
+  margin: 10px;
+}
+</style>
