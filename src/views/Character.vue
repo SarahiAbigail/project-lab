@@ -4,10 +4,33 @@
 
             <div class="container izquierda">
 
-                <button class="btn btn-primary" v-on:click="fetch()" >Mostrar Datos</button>
-                <br><br>
+                <div class="hero is-white is-gradient is-bold">
+                  <div class="hero-body">
 
+                    <h1 class="title">
+                      <span class="hs text success">Personajes</span>
+                    </h1>
 
+                    <div class="column">
+                      <div class="control row-5">
+                        <b-form-input 
+                        v-model="search" 
+                        type="text" 
+                        placeholder="Busca tu personaje Favorito"
+                        v-on:keyup.enter="searchData">
+                        </b-form-input>
+
+                        <b-button variant="success" v-on:click="searchData">Buscar</b-button>
+                        <b-button class="Rerescar" v-on:click="fetchRef">Rerescar</b-button>
+                        <b-button class="Rerescar" v-on:click="Almacena">Ordenar</b-button>
+                      </div>
+                    </div>
+                    
+                  </div>
+                </div>
+
+                <div class="container">
+                  
                 <table class="table table-hover">
                 <thead>
                     <tr>
@@ -25,11 +48,16 @@
                         <td>{{ character.species }}</td>
                         <td>{{ character.gender }}</td>
                         <td>{{ character.status }}</td>
+
                     </tr>
             
                 </tbody>
                 </table>
+                  
 
+                </div>
+
+              
             </div>
 
 
@@ -47,7 +75,8 @@ export default {
   name: "App2" ,
   data: function() {
     return {
-      characters: []
+      characters: [],
+      search: ""
     };
   },
       components:{
@@ -58,20 +87,61 @@ export default {
         this.fetch()
     },
   methods:{
+    //metodo con parametro para busqueda
     fetch() {
-      let result = axios.get("https://rickandmortyapi.com/api/character").then(res => {
+      const params ={
+        name:this.search
+      }
+      
+      let result = axios.get("https://rickandmortyapi.com/api/character", { params }).then(res => {
 
         //resivimos los personajes
         this.characters = res.data.results;
-        //setemos las paginas
-        this.page = res.data.info.pages;
         console.log(res.data);
         console.log(result);
       })
       .catch(err => {
         console.log(err);
       })
+    },
+    //metodo normal
+    fetchRef() {
+      
+      let result = axios.get("https://rickandmortyapi.com/api/character").then(res => {
+
+        //resivimos los personajes
+        this.characters = res.data.results;
+        console.log(res.data);
+        console.log(result);
+      })
+      .catch(err => {
+        console.log(err);
+      })
+    },
+    //Busqueda
+    searchData(){
+      this.fetch()
+    },
+    //Almacenar Busqueda en un Arreglo
+    Almacena(){
+            const characters = fetch("https://rickandmortyapi.com/api/character").then(res => res.json());
+            characters.then((datos) => {
+            console.log(datos);
+        });
+
+        characters.sort((a, b)=>{
+          if (a.name > b.name) {
+            return 1;
+            }
+            if (a.name < b.name) {
+              return -1;
+            }
+             // a must be equal to b
+            return 0;
+        }
+          );
     }
+  
   }
 
 };

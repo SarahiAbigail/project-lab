@@ -7,6 +7,7 @@
       <router-link to="/Character2">Character2</router-link>
     </div>
     <router-view/>
+
   </div>
 </template>
 

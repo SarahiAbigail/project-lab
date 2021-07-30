@@ -30,12 +30,6 @@
       </div>
 
   </div>
-
-    
-
-    <div v-for="character of characters" v-bind:key="character.id">
-    {{ character }}
-    </div>
   </div>
 
 </template>
