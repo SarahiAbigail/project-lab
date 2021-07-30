@@ -3,6 +3,7 @@
 
     <main class="container">
 
+        
         <div class="row" id="entertainment">
             <div class="col-md-6 text-center">
                 <img src="../assets/logo.png" alt="" id="img-uno">
