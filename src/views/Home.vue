@@ -1,25 +1,5 @@
 <template>
   <div class="home">
-    <div class="navbar navbar-expand-lg navbar-dark bg-dark">
-        
-        <div class="container">
-            <h1 class="navbar-brand">Entertainment®</h1>
-
-            <button class="navbar-toggler" data.toggle="collapse" data.target="#mylist">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-
-            <div class="collapse navbar-collapse justify-content-end" id="mylist" >
-
-                <div class="navbar-nav">
-                    <a href="#entertainment" class="nav-link">Entertainment®</a>
-                    <a href="#peliculas" class="nav-link">Películas</a>
-                    <a href="#series" class="nav-link">Series</a>
-                </div>
-
-            </div>
-        </div>
-    </div>
 
     <main class="container">
 
