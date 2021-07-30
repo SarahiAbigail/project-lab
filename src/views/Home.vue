@@ -5,36 +5,36 @@
 
         <div class="row" id="entertainment">
             <div class="col-md-6 text-center">
-                <img src="../assets/logo.png" alt="" id="img-uno">
+                <img src="../assets/img1.jpg" alt="" id="img-uno">
             </div>
     
             <div class="col-md-6 text-left my-auto">
-                <h1 class="fw-bold">La más completa plataforma de streaming</h1>
-                <p>Te damos acceso a las mejores series, películas   documentales desde la comodidad de tu hogar.</p>
-                <button class="btn btn-dark" id="btn">Suscríbete ahora</button>
+                <h1 class="fw-bold">El mejor sitio para ver Rick and Morty</h1>
+                <p>Te damos acceso a los episodios de la serie y también te contamos sobre sus personajes</p>
+                <button class="btn btn-dark" id="btn">Comenzar Serie</button>
             </div>
         </div>
 
         <div class="row flex-row-reverse" id="peliculas">
             <div class="col-md-6 text-center">
-                <img src="../assets/logo.png" alt="" id="img-dos">
+                <img src="../assets/img2.jpg" alt="" id="img-dos">
             </div>
     
             <div class="col-md-6 text-left my-auto">
-                <h1 class="fw-bold">Películas de todo género para toda la familia</h1>
-                <p>Comedia, Acción, Romance, Ciencia ficción, Animadas, Terror... El género que prefieras.</p>
+                <h1 class="fw-bold">Vistazo a la serie</h1>
+                <p>Después de haber estado desaparecido durante casi 20 años, Rick Sánchez llega de imprevisto a la puerta de la casa de su hija Beth y se va a vivir con ella y su familia utilizando el garaje como su laboratorio personal.</p>
                 
             </div>
         </div>
 
         <div class="row" id="series">
             <div class="col-md-6 text-center">
-                <img src="../assets/logo.png" alt="" id="img-tres">
+                <img src="../assets/img3.jpg" alt="" id="img-tres">
             </div>
     
             <div class="col-md-6 text-left my-auto">
-                <h1 class="fw-bold">Las mejores y entretenidas series en un solo lugar</h1>
-                <p>Series largas, mini-series, k-dramas, sit-com y más, la que desees ver están acá.</p>
+                <h1 class="fw-bold">Conoce los personajes</h1>
+                <p>Descubre y conoce cada personaje de la serie. ¿Que personaje prefieres?</p>
                 
             </div>
         </div>
@@ -46,8 +46,8 @@
 
             <div class="row text-center py-3">
                 <div class="col-md-6 fw-light" id="footer">
-                    <div>Entertainment®</div>
-                    <div>Entretenimiento en casa,con amor</div>
+                    <div>Rick and Morty Home®</div>
+                    <div>El mejor sitio para fans de la serie</div>
                 </div>
 
                 <div class="col-md-6 fw-light" id="footer">
@@ -78,8 +78,8 @@ body{
 
 /***Imágenes del main***/
 #img-uno, #img-dos, #img-tres{
-    height: 400px;
-    width: 450px;
+    height: 360px;
+    width: 360px;
     margin: 50px;
     padding: 10px;
     cursor: pointer;
