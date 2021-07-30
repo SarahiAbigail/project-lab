@@ -4,37 +4,37 @@
 
             <div class="container izquierda">
 
-                <button class="btn btn-primary" v-on:click="nuevo()" >Nuevo paciente</button>
+                <button class="btn btn-primary" v-on:click="fetch()" >Mostrar Datos</button>
                 <br><br>
 
 
                 <table class="table table-hover">
                 <thead>
                     <tr>
-                        <th scope="col">ID</th>
-                        <th scope="col">Nombre</th>
-                        <th scope="col">CI</th>
-                        <th scope="col">TELEFONO</th>
-                        <th scope="col">CORREO</th>
+                        <th scope="col">id</th>
+                        <th scope="col">name</th>
+                        <th scope="col">species</th>
+                        <th scope="col">gender</th>
+                        <th scope="col">status</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr v-for="paciente in Listapacientes" :key="paciente.PacienteId" v-on:click="editar(paciente.PacienteId)">
-                        <th scope="row">{{ paciente.PacienteId}}</th>
-                        <td>{{ paciente.Nombre }}</td>
-                        <td>{{ paciente.CI }}</td>
-                        <td>{{ paciente.Telefono }}</td>
-                        <td>{{ paciente.Correo }}</td>
+                    <tr v-for="character in characters" :key="character.id">
+                        <td>{{ character.id }}</td>
+                        <td>{{ character.name }}</td>
+                        <td>{{ character.species }}</td>
+                        <td>{{ character.gender }}</td>
+                        <td>{{ character.status }}</td>
                     </tr>
             
                 </tbody>
                 </table>
 
             </div>
-
         <Footer />
     </div>
 </template>
+
 
 <script>
 import Header from '@/components/Header.vue';
@@ -42,35 +42,32 @@ import Footer from '@/components/Footer.vue';
 import axios from 'axios';
 
 export default {
-    name:"Dashboard",
-    data(){
-        return {
-            Listapacientes:null,
-            pagina:1
-        }
-    },
-    components:{
+  name: "App2" ,
+  data: function() {
+    return {
+      characters: []
+    };
+  },
+      components:{
         Header,
         Footer
     },
-    methods:{
-            editar(id){
-                this.$router.push('/editar/' + id);
-            },
-            nuevo(){
-                this.$router.push('/nuevo');
-            }
+    created() {
+        this.fetch()
     },
-    mounted:function(){
-        let direccion = "http://solodata.es/pacientes?page=" + this.pagina;
-        axios.get(direccion).then( data =>{
-            this.Listapacientes = data.data;
-        });
+  methods:{
+    fetch() {
+      let result = axios.get("https://rickandmortyapi.com/api/character").then(res => {
+        this.characters = res.data.results;
+        console.log(res.data);
+        console.log(result);
+      })
+      .catch(err => {
+        console.log(err);
+      })
     }
-}
+  }
+
+};
+
 </script>
-<style  scoped>
-    .izquierda{
-        text-align: left;
-    }
-</style>
