@@ -31,6 +31,8 @@
                 </table>
 
             </div>
+
+
         <Footer />
     </div>
 </template>
@@ -58,7 +60,11 @@ export default {
   methods:{
     fetch() {
       let result = axios.get("https://rickandmortyapi.com/api/character").then(res => {
+
+        //resivimos los personajes
         this.characters = res.data.results;
+        //setemos las paginas
+        this.page = res.data.info.pages;
         console.log(res.data);
         console.log(result);
       })
