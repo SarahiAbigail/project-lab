@@ -17,7 +17,7 @@
                         v-model="search" 
                         type="text" 
                         placeholder="Busca tu Episodio Favorito"
-                        v-on:keyup.enter="searchData">
+                        v-on:keyup.enter="searchData" id="input">
                         </b-form-input>
 
                         <b-button variant="success" v-on:click="searchData">Buscar</b-button>
@@ -161,3 +161,21 @@ export default {
 };
 
 </script>
+
+<style scoped>
+
+h1{
+  text-align: center;
+  margin: 10px;
+  padding: 10px;
+}
+
+
+#input {
+
+  padding: 20px;
+  margin:20px;
+
+}
+
+</style>
