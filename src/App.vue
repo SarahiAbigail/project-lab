@@ -1,13 +1,13 @@
 <template>
   <div id="app">
-    <div id="nav">
       <router-link to="/">Home</router-link> |
       <router-link to="/Episodes">Episodios</router-link> |
       <router-link to="/Character">Character</router-link> |
-      <router-link to="/Character2">Character2</router-link>
-    </div>
-    <router-view/>
+      <b-nav-item-dropdown text="Lang" right>
+          <router-link to="/Character2">Character2</router-link>
+        </b-nav-item-dropdown>
 
+    <router-view/>
   </div>
 </template>
 
