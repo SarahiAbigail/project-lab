@@ -23,6 +23,9 @@
           <router-link to="/Episodes">Episodios</router-link> 
         </b-dropdown-item>
       </b-nav-item-dropdown>
+        <b-nav-item>
+          <router-link to="/Dashboard">Dashboard</router-link> 
+        </b-nav-item>
     </b-navbar-nav>
     </div>
   </b-navbar>
