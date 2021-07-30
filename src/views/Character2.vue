@@ -16,7 +16,7 @@
            v-model="search"
            type="text"
            placeholder="Busca tu personaje Favorito"
-           v-on:keyup.enter="searchData">
+           v-on:keyup.enter="searchData" id="input">
         </b-form-input>
         </div>
         <b-button variant="success" v-on:click="searchData">Buscar</b-button>
@@ -24,11 +24,11 @@
 
     </div>
 
-      <div class="container">
+      <div class="container" id="container">
 
         <div class="column is-12-mobile is-4-desktop" v-for="character of characters" v-bind:key="character.id">
           
-          <div class="card">
+          <div class="card" id="card">
             <div class="card-header"><img v-bind:src="character.image" v-bind:alt="character.name">
             </div>
 
@@ -45,6 +45,8 @@
 
   </div>
   </div>
+
+
 
 </template>
 
@@ -152,3 +154,28 @@ export default {
 };
 
 </script>
+
+
+<style scoped>
+
+h1{
+  text-align: center;
+  margin: 10px;
+  padding: 10px;
+}
+
+#card{
+
+  align-items: center;
+  margin: 20px;
+  padding: 20px;
+}
+
+#input, #container{
+
+  padding: 20px;
+  margin:20px;
+
+}
+
+</style>
