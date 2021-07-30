@@ -47,7 +47,7 @@
             <div class="row text-center py-3">
                 <div class="col-md-6 fw-light" id="footer">
                     <div>Entertainment®</div>
-                    <div>Entretenimiento en casa</div>
+                    <div>Entretenimiento en casa,con amor</div>
                 </div>
 
                 <div class="col-md-6 fw-light" id="footer">
