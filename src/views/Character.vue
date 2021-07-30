@@ -22,8 +22,8 @@
 
                         <b-button variant="success" v-on:click="searchData">Buscar</b-button>
                         <b-button class="Rerescar" v-on:click="fetchRef">Rerescar</b-button>
-                        <b-button class="Rerescar" v-on:click="Almacena">Ordenar</b-button>
-                      </div>
+                        <b-button class="Rerescar" v-on:click="MayorMenor">Ordenar Mayor a Menor</b-button>
+                        <b-button class="Rerescar" v-on:click="MenorMayor">Ordenar Menor a Mayor</b-button>                      </div>
                     </div>
                     
                   </div>
@@ -111,6 +111,7 @@ export default {
 
         //resivimos los personajes
         this.characters = res.data.results;
+        
         console.log(res.data);
         console.log(result);
       })
@@ -122,21 +123,45 @@ export default {
     searchData(){
       this.fetch()
     },
-    //Almacenar Busqueda en un Arreglo
-    Almacena(){
+
+
+    //Ordena de Mayor a menor
+    MayorMenor(){
+      //metodo para pasar la consulta a un array
             const characters = fetch("https://rickandmortyapi.com/api/character").then(res => res.json());
             characters.then((datos) => {
             console.log(datos);
-        });
+            })
 
-        characters.sort((a, b)=>{
+        //metodo para ordenar
+        this.characters.sort((a, b)=>{
+          if (a.name < b.name) {
+            return 1;
+            }
+            if (a.name > b.name) {
+              return -1;
+            }
+            return 0;
+        }
+          );
+    },
+
+    //Ordena de Mayor a menor
+    MenorMayor(){
+      //metodo para pasar la consulta a un array
+            const characters = fetch("https://rickandmortyapi.com/api/character").then(res => res.json());
+            characters.then((datos) => {
+            console.log(datos);
+            })
+
+        //metodo para ordenar
+        this.characters.sort((a, b)=>{
           if (a.name > b.name) {
             return 1;
             }
             if (a.name < b.name) {
               return -1;
             }
-             // a must be equal to b
             return 0;
         }
           );
