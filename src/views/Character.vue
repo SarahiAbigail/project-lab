@@ -23,7 +23,8 @@
                         <b-button variant="success" v-on:click="searchData">Buscar</b-button>
                         <b-button class="Rerescar" v-on:click="fetchRef">Rerescar</b-button>
                         <b-button class="Rerescar" v-on:click="MayorMenor">Ordenar Mayor a Menor</b-button>
-                        <b-button class="Rerescar" v-on:click="MenorMayor">Ordenar Menor a Mayor</b-button>                      </div>
+                        <b-button class="Rerescar" v-on:click="MenorMayor">Ordenar Menor a Mayor</b-button>                     
+                      </div>
                     </div>
                     
                   </div>
@@ -87,6 +88,7 @@ export default {
         this.fetch()
     },
   methods:{
+    
     //metodo con parametro para busqueda
     fetch() {
       const params ={
@@ -104,6 +106,7 @@ export default {
         console.log(err);
       })
     },
+
     //metodo normal
     fetchRef() {
       
@@ -119,11 +122,11 @@ export default {
         console.log(err);
       })
     },
+
     //Busqueda
     searchData(){
       this.fetch()
     },
-
 
     //Ordena de Mayor a menor
     MayorMenor(){
