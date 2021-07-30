@@ -10,8 +10,6 @@
     
             <div class="col-md-6 text-left my-auto">
                 <h1 class="fw-bold">La más completa plataforma de streaming</h1>
-                <h1> Hola</h1>
-
                 <p>Te damos acceso a las mejores series, películas   documentales desde la comodidad de tu hogar.</p>
                 <button class="btn btn-dark" id="btn">Suscríbete ahora</button>
             </div>
